@@ -32,7 +32,13 @@ body .wrapper nav ul li {
   list-style-type: none;
   display: grid;
 }
-body .wrapper nav ul a {
+body .wrapper nav ul span {
+  display: grid;
+}
+body .wrapper nav ul span.current {
+  text-decoration: underline;
+}
+body .wrapper nav ul span a {
   display: grid;
   place-items: center;
   color: #f4f4f4;
@@ -41,7 +47,7 @@ body .wrapper nav ul a {
   text-decoration: none;
   cursor: pointer;
 }
-body .wrapper nav ul a:hover, body .wrapper nav ul a:focus {
+body .wrapper nav ul span a:hover, body .wrapper nav ul span a:focus {
   background-color: darkslategray;
   text-decoration: underline;
 }
@@ -52,13 +58,39 @@ body .wrapper nav ul a:hover, body .wrapper nav ul a:focus {
 }
 body .wrapper main {
   grid-area: main;
-  padding: 50px;
+  overflow: auto;
+  scrollbar-width: 0;
+  -ms-scroll-snap-type: y proximity;
+      scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
+  padding: 0 50px;
+}
+body .wrapper main::-webkit-scrollbar {
+  display: none;
+}
+body .wrapper main section {
+  min-height: 100%;
+  scroll-snap-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px auto;
+  grid-template-areas: "title" "content";
+}
+body .wrapper main section h2 {
+  grid-area: title;
+  text-align: center;
+  margin: 0;
+  display: grid;
+  place-items: center;
+}
+body .wrapper main section .content-container {
+  grid-area: content;
   display: grid;
   grid-auto-rows: -webkit-max-content;
   grid-auto-rows: max-content;
   grid-gap: 50px;
 }
-body .wrapper main article {
+body .wrapper main section .content-container article {
   background-color: #e1e1e1;
   border-radius: 15px;
   overflow: hidden;
@@ -66,28 +98,54 @@ body .wrapper main article {
   display: grid;
   grid-gap: 15px;
 }
-body .wrapper main article .top {
+body .wrapper main section .content-container article .top {
   cursor: pointer;
   padding: 15px;
 }
-body .wrapper main article .top:hover {
+body .wrapper main section .content-container article .top:hover {
   background-color: #d1d1d1;
 }
-body .wrapper main article .content {
+body .wrapper main section .content-container article .content {
   padding: 0 15px 15px 15px;
 }
-body .wrapper main article .content table {
+body .wrapper main section .content-container article .content table {
   width: 100%;
   border-collapse: collapse;
-  background-color: red;
+  table-layout: fixed;
+  border-radius: 10px;
+  overflow: hidden;
 }
-body .wrapper main article .content table, body .wrapper main article .content table th, body .wrapper main article .content table td {
+body .wrapper main section .content-container article .content table, body .wrapper main section .content-container article .content table th, body .wrapper main section .content-container article .content table td {
   border: 1px solid black;
+  padding: 16px;
+  text-align: center;
 }
-body .wrapper main article p {
+body .wrapper main section .content-container article .content table td:first-child, body .wrapper main section .content-container article .content table th:first-child {
+  width: 50px;
+}
+body .wrapper main section .content-container article .content table thead tr {
+  background-color: darkslategray;
+  color: #f4f4f4;
+}
+body .wrapper main section .content-container article .content table tbody tr {
+  color: black;
+}
+body .wrapper main section .content-container article .content table tbody tr:nth-child(even) {
+  background-color: #d1d1d1;
+}
+body .wrapper main section .content-container article .content table tbody tr:hover {
+  background-color: #c1c1c1;
+}
+body .wrapper main section .content-container article .content ul {
   margin: 0;
 }
-body .wrapper main article .hidden {
+body .wrapper main section .content-container article .content ul li {
+  font-weight: bold;
+}
+body .wrapper main section .content-container article p {
+  margin: 0;
+}
+body .wrapper main section .content-container article .hidden {
   visibility: hidden;
   display: none;
 }

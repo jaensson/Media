@@ -15,60 +15,270 @@
         </header>
         <nav>
             <ul>
-                <li><a href="#">Bild</a></li>
-                <li><a href="#">Ljud</a></li>
-                <li><a href="#">Video</a></li>
+                <li><span class="current"><a href="#img">Bild</a></span></li>
+                <li><span><a href="#audio">Ljud</a></span></li>
+                <li><span><a href="#video">Video</a></span></li>
             </ul>
         </nav>
         <main>
-                <article class="question">
-                    <div class="top">
-                        <p>Vilka olika bildformat går att använda? Vad har de för fördelar / nackdelar?</p>
-                    </div>
-                    <div class="content hidden">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Fördelar</th>
-                                    <th>Nackdelar</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>GIF</td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </article>
-                <article class="question">
-                    <div class="top">
-                        <p>Test 2</p>
-                    </div>
-                    <div class="content hidden">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat aut officia cum numquam? Veritatis nam libero reiciendis modi, corporis ut quas dolorum iure odit optio, vel eius recusandae. Accusamus, veritatis! Porro dignissimos provident deleniti optio rem officia soluta deserunt dolorem dolorum. Autem repellat eos cum! Cumque, explicabo tenetur a, ipsam, veritatis unde velit odit veniam perspiciatis accusamus adipisci dolor architecto mollitia sequi. Adipisci nisi hic dolor tenetur, minus culpa iure sed ratione quod amet, maxime sint. Tempore nesciunt est asperiores repudiandae mollitia exercitationem dolorum quaerat maiores reprehenderit culpa voluptate, magni, dolores id aperiam quia possimus consequuntur quo quam iusto quidem expedita rerum, modi sit. Fugit quisquam possimus impedit consequuntur laborum iusto dolorem reprehenderit voluptas. Accusamus, animi? Cupiditate voluptatum, repellat, neque ex libero a doloribus distinctio asperiores at impedit animi ullam ipsum excepturi facere itaque odio, debitis perspiciatis. Error dolorum odit consequatur repellendus? Neque dicta et, vitae, quis minus libero quam laborum repellendus optio accusamus enim totam ratione molestias impedit quod. Dicta sint laudantium nihil eveniet aliquid, quas praesentium dolores rem nemo exercitationem et eius placeat animi dolore soluta consequuntur debitis accusantium impedit tenetur voluptatem a aperiam ratione. Ullam, delectus modi dolor numquam quia, consequuntur suscipit sunt officia eaque aliquam atque?</p>
-                       
-                    </div>
-                </article>
-                <article class="question">
-                    <div class="top">
-                        <p>Test 3</p>
-                    </div>
-                    <div class="content hidden">
-                        asdfasdf
-                        asdfasdfasdf
-                    </div>
-                </article>
+            <section id="img">
+                <h2>Bild</h2>
+                <div class="content-container">
+                    <article class="question">
+                        <div class="top">
+                            <p>Vilka olika bildformat går att använda? Vad har de för fördelar / nackdelar?</p>
+                        </div>
+                        <div class="content hidden">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Fördelar</th>
+                                        <th>Nackdelar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>JPG</td>
+                                        <td>
+                                            JPG, var designat för att effektivt lagra samt komprimera bilder både i färg och i gråskalan. 
+                                            JPG kan ses som ett väldigt högkomprimerat fotografi. 
+                                            När du sparar en bild i JPG har du möjligheten att välja hur mycket bilden ska komprimeras för att balansera bildkvaliteten med storleken. 
+                                        </td>
+                                        <td>JPG, stödjer inte transparent (genomskinlighet)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>GIF</td>
+                                        <td>
+                                            Lagrar en minimerad färgpalett i bildfilen tillsammans med en nyckel som talar om vart denna färg hör hemma. 
+                                            Passar perfekt för bilder utan gradient och hårda kanter. Stödjer transparent (genomskinlighet) bakgrund. 
+                                            Går att använda för bildanimationer.
+                                        </td>
+                                        <td>Storleken på bilden är oftast förknippat med antalet färger, 
+                                            vanlig antal färger är (2, 4, 8, 16, 32, 64, 128, 256). 
+                                            Stödjer enbart en transparent färg vilket innebär att vi inte kan tona till transparent och lämnar bilden med en färgad ring runt bilden.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>PNG</td>
+                                        <td>
+                                            Lagrar en minimerad färgpalett i bildfilen tillsammans med en nyckel som talar om vart denna färg hör hemma. 
+                                            Passar perfekt för bilder utan gradient och hårda kanter. 
+                                            Stödjer transparent (genomskinlighet) med en varierad toning av transparent vilket får den att smälta in med alla sorters bakgrundsfärger.
+                                        </td>
+                                        <td>
+                                            Storleken på bilden är oftast förknippat med antalet färget, vanligt antal färget är (2, 4, 8, 16, 32, 64, 128, 256).
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </article>
+                    <article class="question">
+                        <div class="top">
+                            <p>Vad är “Data URL” som image source, och vad har det för användningsområden?</p>
+                        </div>
+                        <div class="content hidden">
+                            <p>Med “Data URL” behövs ingen extern bildfil utan det går att embedda bilddatan direkt något som sparar HTTP-requests.</p>
+                        </div>
+                    </article>
+                    <article class="question">
+                        <div class="top">
+                            <p>CSS-egenskaperna “object-fit” och “object-position” och hur de påverkar bilder</p>
+                        </div>
+                        <div class="content hidden">
+                            <ul>
+                                <li>Object-fit</li>
+                                <p>Används för att få bilden att påverkas baserat på innehållet, exempelvis behåll aspect ratio eller stretch.</p>
+                                <li>Object-position</li>
+                                <p> Används för att justera bildens position inuti dess container</p>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="question">
+                        <div class="top">
+                            <p>På vilka sätt kan vi hantera / övervaka / påverka inläsning av bilder med javascript?</p>
+                        </div>
+                        <div class="content hidden">
+                            <p>Med hjälp av javascript går det att:</p>
+                            <ul>
+                                <li>Ändra alla attribut</li>
+                                <li>Skapa nya och ta bort bilder</li>
+                                <li>Ändra styling (utseende)</li>
+                                <li>Event, exempelvis när användaren klickar på bilden dyker en bildram upp</li>
+                                <li>Ge bilden klasser eller id</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            <section id="audio">
+                <h2>Ljud</h2>
+                <div class="content-container">
+                    <article class="question">
+                        <div class="top">
+                            <p>Hur kan vi lägga in / spela upp ljud på en webbsida?</p>
+                        </div>
+                        <div class="content hidden">
+                            <p>
+                                HTML5 har ett element som heter “audio” som tar attribut “src” som ger sökvägen till ljudfilen 
+                                samt “type” som talar om vad för slags ljudfil det är exempelvis “MP3” eller “Ogg”. 
+                                Behövs det fler filer görs detta med ett element som heter “source” som även den tar attribut “src” och “type”.
+                            </p>
+                        </div>
+                    </article>
+                    <article class="question">
+                        <div class="top">
+                            <p>Vilka olika bildformat går att använda? Vad har de för fördelar / nackdelar?</p>
+                        </div>
+                        <div class="content hidden">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Fördelar</th>
+                                        <th>Nackdelar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>WAV</td>
+                                        <td>
+                                            Stöds av alla webbläsare, ett okomprimerat ljudformat för försöker återskapa originalljudet med hög kvalitet.
+                                        </td>
+                                        <td>
+                                            En okomprimerad ljudfil tenderar att bli rätt stor.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mp3</td>
+                                        <td>
+                                            Stöds av alla webbläsare, komprimerar ljudfiler till en väldigt liten storlek med fortsatt bra ljudkvalitet. 
+                                        </td>
+                                        <td>
+                                            Att komprimera till mp3 innebär att en del ljudinformation försvinner helt.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ogg</td>
+                                        <td>
+                                            Gratis open source ljudformat, har bättre ljudkvalitet och filstorlek än mp3
+                                        </td>
+                                        <td>
+                                            Stöds inte av alla webbläsare (Safari), komprimera till Ogg innebära att en del data om ljudfilen fösvinner
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </article>
+                    <article class="question">
+                        <div class="top">
+                            <p>På vilka sätt kan vi hantera / övervaka / påverka inläsning / uppspelning av ljud med javascript</p>
+                        </div>
+                        <div class="content hidden">
+                            <p>Med hjälp av javascript går det att:</p>
+                            <ul>
+                                <li>Ändra alla attribut</li>
+                                <li>Köra metoder exempelvis. "play()" och "pause()"</li>
+                                <li>Hämta properties exempelvis. "duration" och "volume"</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="question">
+                        <div class="top">
+                            <p>Visa med exempel hur man kan använda en befintlig tjänst (ex. soundcloud) för att embeda ljud</p>
+                        </div>
+                        <div class="content hidden">
+                        </div>
+                    </article>
+                </div>
+            </section>
+            <section id="video">
+                <h2>Video</h2>
+                <div class="content-container">
+                    <article class="question">
+                        <div class="top">
+                            <p>Hur kan vi lägga in / spela upp video på en webbsida?</p>
+                        </div>
+                        <div class="content hidden">
+                            <p>
+                                HTML5 har ett element som heter “video” som tar attribut “src” som ger sökvägen till videofilen samt 
+                                “type” som talar om vad för slags videofil det är exempelvis “MP4” eller “Ogg”. 
+                                Behövs det fler filer görs detta med ett element som heter “source” som även den tar attribut “src” och “type”.
+                            </p>
+                        </div>
+                    </article>
+                    <article class="question">
+                        <div class="top">
+                            <p>Vilka olika videoformat går att använda? Vad har de för fördelar / nackdelar?</p>
+                        </div>
+                        <div class="content hidden">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Fördelar</th>
+                                        <th>Nackdelar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>MP4</td>
+                                        <td>
+                                            Stöds av alla webbläsare, har både video, ljud och textfil 
+                                        </td>
+                                        <td>
+                                            Har lite sämre kvalitet än de andra, förlorar data efter komprimering
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>WebM</td>
+                                        <td>
+                                            Stöds av alla webbläsare, laddar och streamer med hyfsat hög kvalitet smärtfritt eftersom storleken på filen är liten
+                                        </td>
+                                        <td>
+                                            Inga interaktiva element
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ogg</td>
+                                        <td>
+                                            Gratis open source, relativt små filer
+                                        </td>
+                                        <td>
+                                            Stöds inte av alla webbläsare (Safari)
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </article>
+                    <article class="question">
+                        <div class="top">
+                            <p>På vilket sätt kan vi hantera / övervaka / påverka inläsning / uppspelning av video med javascript?</p>
+                        </div>
+                        <div class="content hidden">
+                            <p>Med hjälp av javascript går det att:</p>
+                            <ul>
+                                <li>Ändra alla attribut</li>
+                                <li>Köra metoder exempelvis. "play()" och "pause()"</li>
+                                <li>Hämta properties exempelvis. "duration" och "volume"</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="question">
+                        <div class="top">
+                            <p>Visa med exempel hur man kan använda en befintlig tjänst (ex. youtube) för att embedda video</p>
+                        </div>
+                        <div class="content hidden">
+                        </div>
+                    </article>
+                </div>
+            </section>
+            
 
-
-
-                    <!-- <li>Vilka olika bildformat går att använda? Vad har de för fördelar / nackdelar?</li>
-                    <li>Vad är “Data URL” som image source, och vad har det för användningsområden?</li>
-                    <li>css-egenskaperna “object-fit” och “object-position” och hur de påverkar bilder</li>
-                    <li>På vilka sätt kan vi hantera / övervaka / påverka inläsning av bilder med javascript?</li> -->
+            
         </main>
         <footer>
             <p>Skapad av Elias</p>

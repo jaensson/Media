@@ -9,8 +9,6 @@ $contentHeight: calc(100vh - ($headerHeight + $navHeight + $footerHeight));
     }
 }
 
-
-
 body {
     background-color: #f4f4f4;
     margin: 0;
@@ -52,20 +50,30 @@ body {
                     display: grid;
                 }
 
-                a {
+                span {
                     display: grid;
-                    place-items: center;
-                    color: #f4f4f4;
-                    font-size: 18px;
-                    outline: 0;
-                    text-decoration: none;
-                    cursor: pointer;
 
-                    &:hover, &:focus {
-                        background-color: darkslategray;
+                    &.current {
                         text-decoration: underline;
                     }
+                    
+                    a {
+                        display: grid;
+                        place-items: center;
+                        color: #f4f4f4;
+                        font-size: 18px;
+                        outline: 0;
+                        text-decoration: none;
+                        cursor: pointer;
+    
+                        &:hover, &:focus {
+                            background-color: darkslategray;
+                            text-decoration: underline;
+                        }
+                    }
                 }
+
+                
 
                 @include tablet {
                     grid-template-columns: repeat(auto-fit, 100px);
@@ -75,55 +83,126 @@ body {
 
         main {
             grid-area: main;
-            padding: 50px;
-            display: grid;
-            grid-auto-rows: max-content;
-            grid-gap: 50px;
+            overflow: auto;
+            scrollbar-width: 0;
+            scroll-snap-type: y proximity;
+            scroll-behavior: smooth;
+            padding: 0 50px;
 
-            article {
-                background-color: #e1e1e1;
-                border-radius: 15px;
-                overflow: hidden;
-                box-shadow: 0 0 5px 0 rgb(0, 0, 0, 0.5);
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            section {
+                min-height: 100%;
+                scroll-snap-align: center;
                 display: grid;
-                grid-gap: 15px;
+                grid-template-columns: 1fr;
+                grid-template-rows: 100px auto;
+                grid-template-areas: 
+                    "title"
+                    "content";
+               
 
-
-                .top {
-                    cursor: pointer;
-                    padding: 15px;
-
-                    &:hover {
-                        background-color: #d1d1d1;
-                    }
+                h2 {
+                    grid-area: title;
+                    text-align: center;
+                    margin: 0;
+                    display: grid;
+                    place-items: center;
                 }
 
-                .content {
-                    padding: 0 15px 15px 15px;
+                .content-container {
+                    grid-area: content;
+                    display: grid;
+                    grid-auto-rows: max-content;
+                    grid-gap: 50px;
 
+                    article {
+                        background-color: #e1e1e1;
+                        border-radius: 15px;
+                        overflow: hidden;
+                        box-shadow: 0 0 5px 0 rgb(0, 0, 0, 0.5);
+                        display: grid;
+                        grid-gap: 15px;
+        
+        
+                        .top {
+                            cursor: pointer;
+                            padding: 15px;
+        
+                            &:hover {
+                                background-color: #d1d1d1;
+                            }
+                        }
+        
+                        .content {
+                            padding: 0 15px 15px 15px;
+        
+        
+                            table {
+                                width: 100%;
+                                border-collapse: collapse;
+                                table-layout: fixed;
+                                border-radius: 10px;
+                                overflow: hidden;
 
-                    table {
-                        width: 100%;
-                        border-collapse: collapse;
-                        background-color: red;
+                                &, th, td {
+                                    border: 1px solid black;
+                                    padding: 16px;
+                                    text-align: center;
+                                }
 
+                                td:first-child, th:first-child {
+                                    width: 50px;
+                                }
 
-                        &, th, td {
-                            border: 1px solid black;
+                                thead tr {
+                                    background-color: darkslategray;
+                                    color: #f4f4f4;
+                                }
+
+                                tbody {
+                                    tr {
+                                        color: black;
+
+                                        &:nth-child(even) {
+                                            background-color: #d1d1d1;
+                                        }
+
+                                        &:hover {
+                                            background-color: #c1c1c1;
+                                        }
+                                    }
+                                }
+                            }
+        
+                            ul {
+                                margin: 0;
+        
+                                li {
+                                    font-weight: bold;
+                                }
+                            }
+
+                            
+
+                        }
+                        
+        
+                        p {
+                            margin: 0;
+                        }
+        
+                        .hidden {
+                            visibility: hidden;
+                            display: none;
                         }
                     }
                 }
-                
-
-                p {
-                    margin: 0;
-                }
-
-                .hidden {
-                    visibility: hidden;
-                    display: none;
-                }
             }
+
+            
         }
 
         footer {
